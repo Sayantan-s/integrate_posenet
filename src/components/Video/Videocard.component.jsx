@@ -64,7 +64,8 @@ outline: none;
 `
 
 const WorkoutVid = styled.div`
-display : grid;
+width:100%; 
+height:100%; 
 .Video{
   &_item{
     position:fixed; 

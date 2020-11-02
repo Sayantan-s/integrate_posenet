@@ -23,9 +23,9 @@ function App() {
       },
       scale : 0.5
     })
-    setInterval(_ => {
+   /* setInterval(_ => {
       detect(net)
-    },100)
+    },100) */
   }
 
 
@@ -44,7 +44,7 @@ function App() {
     }
   }
 
-integratePosenet()  // I turned off this posenet function call and the setInterval so that it doesnt detect,cause turning it on is causing a lag.
+//integratePosenet()  // I turned off this posenet function call and the setInterval so that it doesnt detect,cause turning it on is causing
 
 
   return (
@@ -67,4 +67,9 @@ export default App;
 
 const Camera = styled.div`
   z-index: 500000;
+  position: fixed;
+  width: 440px;
+  height: 280px;
+  bottom: 1rem;
+  right : -1rem;
 `
