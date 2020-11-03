@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Clock } from '../ui/ui'
 const Timer = ({time}) => {
     const [mins,setMins] = React.useState(0);
     const [secs,setsecs] = React.useState(0);
@@ -16,8 +17,13 @@ const Timer = ({time}) => {
     },[time])
     return (
         <CountDown >
-            <span>Timer</span>
-            <span>{mins} : {secs}</span>
+            <div className="Timer-header">
+                <div className="Timer-header--holder">
+                    <span>Timer</span>
+                    <span><Clock /></span>
+                </div>
+            </div>
+            <span className="timer">{mins} : {secs}</span>
         </CountDown >
     )
 }
@@ -39,8 +45,7 @@ box-shadow: 0 5px 20px rgba(255,255,255,0.5);
 display : flex;
 place-content: center ;
 flex-direction: column;
-span{
-    &:first-child{
+.Timer-header{
         font-weight : 400;
         color : var(--colGray);
         font-size: 1rem;
@@ -49,22 +54,41 @@ span{
         margin-bottom: 1rem;
         display: flex;
         flex-direction:column; 
+        &--holder{
+            display: flex;
+            margin: 0;
+            padding: 0;
+            span{
+                margin: 0;
+                padding: 0;
+                &:last-child{
+                    order: -1;
+                    width: 1rem;
+                    height: 1rem;
+                    margin-right: 0.3rem;
+                    transform: translateY(0.15rem);
+                    svg{
+                        width: 1rem;
+                        height: 1rem;
+                    }
+                }
+        }
+        }
         &::after{
             content : '';
             height: 2px;
-            width: 50%;
+            width: 60%;
             background-color: red;
             margin: 0;
             padding: 0 ;
         }
-    }
-    &:nth-child(2){
+}
+.timer{
         font-size : 3rem;
         font-weight: 800;
         padding: 0;
         margin: 0;
         font-style: italic;
         line-height: 1;
-    }
 }
 `

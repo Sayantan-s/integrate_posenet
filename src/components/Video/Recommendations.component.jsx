@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const Recommendations = () => {
     return (
         <Texts>
-            Recomendations
+            <span>Recomendations</span>
         </Texts>
     )
 }
@@ -24,12 +24,14 @@ margin: 0.5rem 1rem;
 transform: skewX(-10deg);
 background-color: var(--recomm);
 padding: 0.5rem 2rem;
-&::before{
+span{
+    &::before{
     content : '';
-    height: 23px;
+    height: 100%;
     width: 20px;
     align-self:center;
     background-color: red;
     margin-right: 0.3rem;
+}
 }
 `
