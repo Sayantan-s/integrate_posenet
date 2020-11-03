@@ -1,7 +1,10 @@
 import React from 'react'
 import YouTube from 'react-youtube'
 import  styled  from 'styled-components'
-import Camera from './Camera'
+import Camera from './Camera.component'
+import Timer from './Timer.compoenent'
+import CalorieCount  from './CalorieCount.compoenent'
+import Texts from './Recommendations.component'
 const Video = () => {
       const opts = {
         playerVars: {
@@ -14,23 +17,25 @@ const Video = () => {
           HD: 1,
           frameBorder: 0,
           cc_load_policy: 1,
-          color: "white"
+          color: "white",
+          autohide : 1
         },
       };
+      const videoRef= React.useRef(null);
       const [videoState,setVideoState] = React.useState(0);
+      const [videoDuration,setDuration] = React.useState(0)
       const playVideo = eve => {
         console.log(eve.target)
         if(eve.target.getPlayerState() === 3){
           setVideoState(eve.target.getPlayerState())
         }
+        setDuration(eve.target.getDuration())
       }
-      console.log(videoState)
-      const videoRef= React.useRef(null);
     return (
         <WorkoutVid>
             <YouTube
             ref={videoRef}
-            videoId="Tz9d7By2ytQ"         // defaults -> null
+            videoId="Tz9d7By2ytQ"         // defaul/fts -> null
             className="Video_item"                // defaults -> null
             containerClassName="Video"       // defaults -> ''
             opts={opts}                        // defaults -> {}
@@ -45,6 +50,9 @@ const Video = () => {
           />
           {videoState === 2 && <Button onClick={() => {console.log(videoRef.current)}}>Play</Button>}
           <Camera />
+          <Timer time={videoDuration}/>
+          <CalorieCount />
+          <Texts />
         </WorkoutVid>
     )
 }
@@ -62,7 +70,6 @@ border-radius: 1.2rem;
 border: none;
 outline: none;
 `
-
 const WorkoutVid = styled.div`
 width:100%; 
 height:100%; 
@@ -82,7 +89,7 @@ height:100%;
     overflow:hidden; 
     z-index:99;
   }
-  &::after{
+ /* &::after{
       content: '';
       position:absolute; 
       top:0; 
@@ -94,6 +101,6 @@ height:100%;
       height:100%;
       background: -webkit-linear-gradient( rgba(0,0,0, 0) 0%, rgba(0,0,0, 0) 0%, rgba(0,0,0, 1) 100% );
       z-index : 10000;
-    }
+    } */
 }
 `

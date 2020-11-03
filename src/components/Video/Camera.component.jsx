@@ -12,7 +12,6 @@ function App() {
     height : 280,
     zIndex  : 200,
     position : 'absolute',
-    margin : '0 auto',
     borderRadius  : '1.2rem'
   }
   const integratePosenet = async _ => {
@@ -23,9 +22,9 @@ function App() {
       },
       scale : 0.5
     })
-   /* setInterval(_ => {
+   setInterval(_ => {
       detect(net)
-    },100) */
+    },100)
   }
 
 
@@ -44,7 +43,7 @@ function App() {
     }
   }
 
-//integratePosenet()  // I turned off this posenet function call and the setInterval so that it doesnt detect,cause turning it on is causing
+  integratePosenet()  // I turned off this posenet function call and the setInterval so that it doesnt detect,cause turning it on is causing problems.
 
 
   return (
