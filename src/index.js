@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Workout from './Workout';
 import reportWebVitals from './reportWebVitals';
+import Character from './Character';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Workout />
+    <Character />
   </React.StrictMode>,
   document.getElementById('root')
 );
