@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Workout from './Workout';
 import reportWebVitals from './reportWebVitals';
-import Character from './Character';
+//import Character from './Character';
+import Landing from './Landing';
+import './assets/fonts/stylesheet.css' 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Character />
+    <Landing />
   </React.StrictMode>,
   document.getElementById('root')
 );
