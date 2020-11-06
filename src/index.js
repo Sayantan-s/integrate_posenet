@@ -6,10 +6,13 @@ import reportWebVitals from './reportWebVitals';
 //import Character from './Character';
 import Landing from './Landing';
 import './assets/fonts/stylesheet.css' 
+import * as BrowserRouter from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Landing />
+    <BrowserRouter>
+      <Landing />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

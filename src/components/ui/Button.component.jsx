@@ -21,4 +21,5 @@ background-color : ${props => props.bgCol ? props.bgCol : 'var(--secondaryMain)'
 font-family: 'Futura TS';
 color : #fff;
 font-size : var(--button);
+cursor : pointer;
 `
