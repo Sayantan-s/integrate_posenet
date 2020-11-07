@@ -7,7 +7,7 @@
   --recomm :  rgba(26, 32, 44, 0.308);
 
  /*Colors*/
-  --primaryBase : rgb(255, 255, 255);
+  --primaryBase : rgb(255, 249, 244);
   --primaryMain : rgb(245, 218, 194);
   --secondaryBase : rgb(182, 140, 99);
   --secondaryMain : rgb(72, 35, 15);
@@ -28,6 +28,12 @@ body {
   font-family: var(--font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x:hidden;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+body::-webkit-scrollbar{
+  display: none;  
 }
 
 code {

@@ -24,8 +24,5 @@ font-size : var(--button);
 cursor : pointer;
 font-weight: 500;
 margin : 0.5rem 0 0 0;
-transition : 0.2s all;
-&:hover{
-    transform : scale(1.015)
-}
+transition : 1s all;
 `

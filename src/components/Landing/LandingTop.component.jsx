@@ -3,12 +3,12 @@ import { Grid } from '../layout/StyleWrappers'
 import styled from 'styled-components'
 import Button from '../ui/Button.component'
 import Nav from '../ui/Nav.component'
-import { Chevron } from '../ui/ui'
+import { ChevronDown, ChevronRight } from '../ui/ui'
 const LandingTop = () => {
     return (
-      <LandingWrapperTop row="100%">
+      <LandingWrapperTop row="max-content 1fr max-content">
                 <Nav 
-                row={'1/-1'}
+                row={'1/2'}
                 column={'2/12'}
                 logo />
                 <div className="Topholder-bg"/>
@@ -20,7 +20,7 @@ const LandingTop = () => {
                             className="Topholder-content--items_btn"
                             btnBg={'var(--secondaryBase)'}>
                                 <span>Count me in</span>
-                                <span className="Topholder-content--items_btn--svg"><Chevron size={'1.7rem'}/></span>
+                                <span className="Topholder-content--items_btn--svg"><ChevronRight size={'1.7rem'}/></span>
                             </Button>
                     </div>
                 </div>
@@ -31,6 +31,7 @@ const LandingTop = () => {
                         alt="header" />
                     </div>
                 </div>
+                <div className="Topholder-scroll"><ChevronDown size="4rem"/></div>
       </LandingWrapperTop>
     )
 }
@@ -44,18 +45,24 @@ const LandingWrapperTop = styled(Grid)`
     .Topholder{
             &-img{
             grid-column : 7/-1;
-            grid-row : 1/-1;
+            grid-row : 1/-2;
             background-color: white;
             display : flex;
             justify-content :center;
             place-items:center;
+            background-color: var(--primaryBase);
                &--container{
                 position : relative;
+                overflow: hidden;
+                &:hover img{
+                    transform : scale(1.2);
+                    }
                     img{
                         max-width : 100%;
                         min-width: 45rem;
                         z-index : 1000;
                         position : relative;
+                        transition: 5s all;
                     }
                     &::after{
                             content: '';
@@ -80,10 +87,17 @@ const LandingWrapperTop = styled(Grid)`
                 place-items:center;
                 background-color : var(--primaryMain);
             }
+            &-scroll{
+                grid-column : 6/8;
+                z-index: 1000000;
+                margin: 0 auto;
+                transform: translateY(-2rem);
+                cursor:pointer;
+            }
             &-content{
                     z-index : 100000;
                     grid-column : 2/7;
-                    grid-row : 1/-1;
+                    grid-row : 1/-2;
                     align-self :center;
                     &--items{
                         h1{
@@ -100,14 +114,17 @@ const LandingWrapperTop = styled(Grid)`
                         &_btn{
                             display :flex;
                             justify-content:center;
-                            &--svg{
-                                width : 1.7rem;
-                                display:flex;
-                                place-content: center;
-                                margin-left: 0.5rem;
+                            span{
+                                transition : 0.6s all;
+                                &:last-child{
+                                    width : 1.7rem;
+                                    display:flex;
+                                    place-content: center;
+                                    margin-left: 0.5rem;
+                                }
                             }
-                            &:hover &--svg{
-                                transform : translateX(9rem);
+                            &:hover span:last-child{
+                                transform : translateX(0.6rem);
                             }
                         }
                     }

@@ -33,7 +33,7 @@ a{
 }
 .Nav{
     &-Logo{
-        flex-basis: 40%;
+        flex-basis: 50%;
         a{
             width : 2rem;
             height : 2rem;
@@ -43,7 +43,7 @@ a{
         }
     }
     &-Routes{
-        flex-basis: 60%;
+        flex-basis: 50%;
         display: flex;
         justify-content: space-between;
         font-weight: 600;
