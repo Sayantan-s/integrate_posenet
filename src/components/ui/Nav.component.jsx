@@ -1,17 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 import Links from './Links'
+import { Logo } from './ui'
 
-const Nav = ({logo}) => {
+const Nav = (props) => {
     return (
-        <Navbar>
-            { logo &&   <div>
-                            <Link to={Links[0].link}>{Links[0].name}</Link>
+        <Navbar {...props}>
+            { props.logo &&   <div className="Nav-Logo">
+                            <a href={Links[0].link}><Logo fill={'var(--base)'}/></a>
                         </div> }
-            <div className="Routes">
+            <div className="Nav-Routes">
                 {
-                    Links.map(link => <Link to={link.link}>{link.name}</Link>)
+                    Links.map(link => <a href={link.link}>{link.name}</a>)
                 }
             </div>
         </Navbar>
@@ -21,10 +21,32 @@ const Nav = ({logo}) => {
 export default Nav
 
 const Navbar = styled.nav`
-grid-column : ${props => props.col ? props.col : 'none'};
+grid-column : ${ props => props.column || 'none' };
+grid-row : ${props => props.row || 'none'};
 display: flex;
-justify-content: space-between;
-.Routes{
-    display: flex;
+margin: 0;
+z-index: 100000;
+padding: 1rem 0;
+a{
+    text-decoration: none;
+    color : var(--base)
+}
+.Nav{
+    &-Logo{
+        flex-basis: 40%;
+        a{
+            width : 2rem;
+            height : 2rem;
+            svg{
+                width : 2rem;
+            }
+        }
+    }
+    &-Routes{
+        flex-basis: 60%;
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+    }
 }
 `

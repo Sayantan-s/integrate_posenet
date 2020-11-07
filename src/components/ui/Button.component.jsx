@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Button = ({className,children,handleClick,...otherProps}) => {
+const Button = ({className,children,handleClick,btnCol,btnBg,p,...otherProps}) => {
     return <Btn 
     className={className}
     onClick={handleClick}
+    btnCol={btnCol}
+    btnBg={btnBg}
     {...otherProps}
     >{children}</Btn>
 }
@@ -17,9 +19,10 @@ padding : ${props => props.p ? props.p : '0.8rem 1.5rem'};
 margin : 0;
 border : none;
 outline  : none;
-background-color : ${props => props.bgCol ? props.bgCol : 'var(--secondaryMain)'};
+background-color : ${props => props.btnBg || 'var(--secondaryMain)'};
 font-family: 'Futura TS';
-color : #fff;
+color : ${props => props.btnCol || 'var(--primaryBase)'};
 font-size : var(--button);
 cursor : pointer;
+font-weight: 600;
 `

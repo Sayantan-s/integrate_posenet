@@ -10,9 +10,7 @@ import * as BrowserRouter from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
       <Landing />
-    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
