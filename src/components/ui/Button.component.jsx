@@ -1,10 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Button = ({className,children,handleClick,btnCol,btnBg,p,...otherProps}) => {
-    return <Btn 
-    className={className}
-    onClick={handleClick}
+const Button = ({children,btnCol,btnBg,p,...otherProps}) => {
+    return <Btn
     btnCol={btnCol}
     btnBg={btnBg}
     {...otherProps}
@@ -24,5 +22,10 @@ font-family: 'Futura TS';
 color : ${props => props.btnCol || 'var(--primaryBase)'};
 font-size : var(--button);
 cursor : pointer;
-font-weight: 600;
+font-weight: 500;
+margin : 0.5rem 0 0 0;
+transition : 0.2s all;
+&:hover{
+    transform : scale(1.015)
+}
 `
