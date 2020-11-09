@@ -1,4 +1,4 @@
-export default [
+const Links = [
     {
         name : 'Home',
         link : '/'
@@ -20,3 +20,5 @@ export default [
         link : 'faq'
     }
 ]
+
+export default Links

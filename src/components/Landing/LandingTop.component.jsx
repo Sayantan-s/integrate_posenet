@@ -3,6 +3,7 @@ import { Grid } from '../layout/StyleWrappers'
 import styled from 'styled-components'
 import Button from '../ui/Button.component'
 import Nav from '../ui/Nav.component'
+import Image from '../ui/Image.component'
 import { ChevronDown, ChevronRight } from '../ui/ui'
 const LandingTop = () => {
     return (
@@ -25,11 +26,11 @@ const LandingTop = () => {
                     </div>
                 </div>
                 <div className="Topholder-img">
-                    <div className="Topholder-img--container">
-                        <img 
-                        src = "https://images.unsplash.com/photo-1599447421416-3414500d18a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" 
-                        alt="header" />
-                    </div>
+                    <Image
+                    mainClass="Topholder-"
+                    src = "https://images.unsplash.com/photo-1599447421416-3414500d18a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" 
+                    alt="header"
+                    />
                 </div>
                 <div className="Topholder-scroll"><ChevronDown size="4rem"/></div>
       </LandingWrapperTop>

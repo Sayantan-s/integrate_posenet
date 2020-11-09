@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Links from './Links'
+import Links from '../commons/Links'
 import { Logo } from './ui'
 
 const Nav = (props) => {
