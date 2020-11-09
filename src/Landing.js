@@ -20,7 +20,8 @@ const Landing = () => {
             headerProps={Mains}/>
             <Section 
             rows="3/4"
-            headerProps={Endings}/>
+            headerProps={Endings}
+            />
         </Grid>
     )
 }
