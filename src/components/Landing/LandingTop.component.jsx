@@ -105,6 +105,17 @@ const LandingWrapperTop = styled(Grid)`
                         font-size : var(--head);
                         margin : 0;
                         line-height : 1;
+                        display :flex;
+                        flex-direction : column;
+                        grid-gap : 1rem;
+                        color : var(--base);
+                        &::after{
+                            content : '';
+                            width: 35%;
+                            height: 3px;
+                            background-color: black;
+                            margin-bottom: 1rem;
+                        }
                         }
                         p{
                             font-size : var(--content);
