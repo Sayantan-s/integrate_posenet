@@ -1,17 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
-import Links from '../commons/Links'
+import { Routes } from '../commons/Links'
 import { Logo } from './ui'
 
 const Nav = (props) => {
     return (
         <Navbar {...props}>
             { props.logo &&   <div className="Nav-Logo">
-                            <a href={Links[0].link}><Logo fill={'var(--base)'}/></a>
+                            <a href={Routes[0].link}><Logo fill={'var(--base)'}/></a>
                         </div> }
             <div className="Nav-Routes">
                 {
-                    Links.map(link => <a href={link.link}>{link.name}</a>)
+                    Routes.map(link => <a href={link.link}>{link.name}</a>)
                 }
             </div>
         </Navbar>
@@ -43,10 +43,11 @@ a{
         }
     }
     &-Routes{
-        flex-basis: 50%;
+        flex-basis: ${props => props.flexBasis || '50%'};
         display: flex;
         justify-content: space-between;
         font-weight: 600;
+        width: 100%;
     }
 }
 `

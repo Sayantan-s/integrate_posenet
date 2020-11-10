@@ -9,6 +9,7 @@ const LandingTop = () => {
     return (
       <LandingWrapperTop row="max-content 1fr max-content">
                 <Nav 
+                flex
                 row={'1/2'}
                 column={'2/12'}
                 logo />
@@ -56,6 +57,7 @@ const LandingWrapperTop = styled(Grid)`
                &--container{
                 position : relative;
                 overflow: hidden;
+                height : max-content;
                 &:hover img{
                     transform : scale(1.2);
                     }
@@ -65,6 +67,7 @@ const LandingWrapperTop = styled(Grid)`
                         z-index : 1000;
                         position : relative;
                         transition: 5s all;
+                        transform: scale(1.03);
                     }
                     &::after{
                             content: '';

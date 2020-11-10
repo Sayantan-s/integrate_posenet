@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Footer from './components/Landing/Footer.component'
 import LandingTop from './components/Landing/LandingTop.component'
 import Section from './components/Landing/Section.component'
 import { Grid } from './components/layout/StyleWrappers'
@@ -21,6 +22,14 @@ const Landing = () => {
             <Section 
             rows="3/4"
             headerProps={Endings}
+            />
+            <Section
+            bgCol="var(--primaryMain)" 
+            row="20vh"
+            align="center"
+            //justify="center"
+            flexBasis="none"
+            children={<Footer />}
             />
         </Grid>
     )
