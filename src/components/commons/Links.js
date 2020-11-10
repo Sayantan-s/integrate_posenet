@@ -26,15 +26,15 @@ export const Routes = [
 
 export const SocialLinks = [
         {
-            key : 'Facebook',
-            href : '#',
-            Icon : Facebook,
-            
-        },
-        {
             key  : 'Instagram',
             href : '#',
             Icon : Instagram,
+            
+        },
+        {
+            key : 'Facebook',
+            href : '#',
+            Icon : Facebook,
             
         },
         {

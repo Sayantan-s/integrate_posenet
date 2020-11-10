@@ -3,13 +3,17 @@ import styled from 'styled-components'
 import { Routes } from '../commons/Links'
 import { Logo } from './ui'
 
-const Nav = (props) => {
+const Nav = ({logo,flexBasisR,flexBasisL,...props}) => {
     return (
         <Navbar {...props}>
-            { props.logo &&   <div className="Nav-Logo">
+            { logo &&   <div 
+            className="Nav-Logo" 
+            flexBasisL={flexBasisL}>
                             <a href={Routes[0].link}><Logo fill={'var(--base)'}/></a>
                         </div> }
-            <div className="Nav-Routes">
+            <div 
+            className="Nav-Routes" 
+            flexBasisR={flexBasisR}>
                 {
                     Routes.map(link => <a href={link.link}>{link.name}</a>)
                 }
@@ -33,7 +37,7 @@ a{
 }
 .Nav{
     &-Logo{
-        flex-basis: 50%;
+        flex-basis: ${props => props.flexBasisL || '50%'};
         a{
             width : 2rem;
             height : 2rem;
@@ -43,11 +47,11 @@ a{
         }
     }
     &-Routes{
-        flex-basis: ${props => props.flexBasis || '50%'};
+        flex-basis: ${props => props.flexBasisR || '70%'};
         display: flex;
         justify-content: space-between;
         font-weight: 600;
-        width: 100%;
+        margin : 0 auto;
     }
 }
 `

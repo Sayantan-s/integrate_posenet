@@ -9,7 +9,6 @@ const LandingTop = () => {
     return (
       <LandingWrapperTop row="max-content 1fr max-content">
                 <Nav 
-                flex
                 row={'1/2'}
                 column={'2/12'}
                 logo />
@@ -125,12 +124,14 @@ const LandingWrapperTop = styled(Grid)`
                         margin : 0;
                         line-height : 1;
                         color : var(--base);
+                        margin-bottom: 2rem;
                         }
                         p{
                             font-size : var(--content);
                             font-weight : 400;
                             max-width: 450px;
                             text-align: justify;
+                            margin-bottom: 3rem;
                         }
                         &_btn{
                             display :flex;

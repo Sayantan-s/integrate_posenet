@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import EndingSection from './components/Landing/EndingSection.component'
 import Footer from './components/Landing/Footer.component'
 import LandingTop from './components/Landing/LandingTop.component'
 import Section from './components/Landing/Section.component'
@@ -22,6 +23,7 @@ const Landing = () => {
             <Section 
             rows="3/4"
             headerProps={Endings}
+            children={<EndingSection />}
             />
             <Section
             bgCol="var(--primaryMain)" 
