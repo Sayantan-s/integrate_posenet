@@ -15,7 +15,8 @@ const LandingTop = () => {
                 <div className="Topholder-bg"/>
                 <div className="Topholder-content">
                     <div className="Topholder-content--items">
-                            <h1>Work out at home <br />for free.</h1>
+                            <h1>01</h1>
+                            <h2>Work out at home <br />for free.</h2>
                             <p>We believe fitness should be accessible to everyone, everywhere, regardless of income or access to a gym. With hundreds of professional workouts, healthy recipes and informative articles, as well as one of the most positive communities on the web, you’ll have everything you need to reach your personal fitness goals – for free! </p>
                             <Button 
                             className="Topholder-content--items_btn"
@@ -102,20 +103,25 @@ const LandingWrapperTop = styled(Grid)`
                     align-self :center;
                     &--items{
                         h1{
+                            font-size : var(--subhead);
+                            font-weight: 500;
+                            color : var(--secondaryBase);
+                            display :flex;
+                            flex-direction : column;
+                            grid-gap : 1rem;
+                                &::after{
+                                content : '';
+                                width: 15%;
+                                height: 3px;
+                                background-color: black;
+                                margin-bottom: 1rem;
+                            }
+                        }
+                        h2{
                         font-size : var(--head);
                         margin : 0;
                         line-height : 1;
-                        display :flex;
-                        flex-direction : column;
-                        grid-gap : 1rem;
                         color : var(--base);
-                        &::after{
-                            content : '';
-                            width: 35%;
-                            height: 3px;
-                            background-color: black;
-                            margin-bottom: 1rem;
-                        }
                         }
                         p{
                             font-size : var(--content);
