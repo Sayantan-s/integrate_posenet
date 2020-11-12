@@ -15,7 +15,7 @@ const Landing = () => {
         shorthead : 'Pick a spacious location and start the challenge,when it goes live through your phone or laptop.'
     }
     return (
-        <Grid>
+        <Grid gap="3rem 0">
             <LandingTop />
             <Section 
             rows="2/3" 

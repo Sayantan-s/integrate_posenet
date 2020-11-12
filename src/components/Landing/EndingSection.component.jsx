@@ -17,7 +17,7 @@ const EndingSection = () => {
         <EndVideoSection>
             <div className="video-wrapper">
                 <video
-                autoplay 
+                autoPlay 
                 muted 
                 loop>
                     <source src={video} type="video/mp4"/>
@@ -62,8 +62,9 @@ h2{
     color: var(--base);
 }
 p{
-    max-width : 620px;
-    margin-bottom: 2rem;
+    max-width : 720px;
+    min-width : 300px;
+    margin-bottom: 1.5rem;
 }
 `
 const EndVideoSection = styled.div`
@@ -71,9 +72,15 @@ display : flex;
 place-content:center;
 grid-row : 2/-1;
 grid-column :8/-2;
+padding : 2rem 0;
 .video-wrapper {
+    position : relative;
     video{
         max-width : 700px;
+    }
+    &::after{
+        content : '';
+        position : absolute;
     }
 }
 `

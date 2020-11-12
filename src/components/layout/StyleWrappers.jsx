@@ -6,5 +6,6 @@ grid-template-columns : ${props => props.col ? props.col : props.col2 ? 'minmax(
 grid-template-rows: ${props => props.row ? props.row : '100vh 10vh repeat(3,min-content)'};
 grid-gap: ${props => props.gap || '0rem'};
 grid-column : ${props => props.colCount || 'none'};
-grid-row : ${props => props.rowCount || 'none'}
+grid-row : ${props => props.rowCount || 'none'};
+grid-gap : ${props => props.gap || '0rem'};
 `

@@ -16,7 +16,6 @@ const Header = styled.div`
 grid-column : ${props => props.colCount || 'none'};
 grid-row : ${props => props.rowCount || 'none'};
 text-align: center;
-margin-top : 2rem;
 h1{
     font-size : var(--subhead);
     padding: 0;
