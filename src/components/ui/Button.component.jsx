@@ -13,16 +13,23 @@ export default Button
 
 
 const Btn = styled.button`
+display:flex;
+justify-content:center;
 padding : ${props => props.p ? props.p : '0.8rem 1.5rem'};
+width: ${props => props.width || 'auto'};
+height: ${props => props.height || 'auto'};
 margin : 0;
 border : none;
 outline  : none;
-background-color : ${props => props.btnBg || 'var(--secondaryMain)'};
+background-color : ${props => props.btnBg || 'transparent'};
 font-family: 'Futura TS';
 color : ${props => props.btnCol || 'var(--primaryBase)'};
 font-size : var(--button);
 cursor : pointer;
 font-weight: 500;
 margin : 0.5rem 0 0 0;
-transition : 1s all;
+transition : ${props => props.transition || '1s all'};
+&:hover{
+    background-color : ${props => props.hovBg || "none"};
+}
 `

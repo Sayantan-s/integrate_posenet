@@ -1,4 +1,4 @@
-const DanceTypes = [
+export const DanceTypes = [
     {
         src : 'https://images.pexels.com/photos/2345293/pexels-photo-2345293.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
         alt : 'jazzercise'
@@ -32,5 +32,3 @@ const DanceTypes = [
         alt : "bokwa"
     }
 ]
-
-export default DanceTypes

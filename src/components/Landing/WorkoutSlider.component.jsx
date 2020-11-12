@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import Button from '../ui/Button.component'
 import { ArrowLeft, ArrwoRight } from '../ui/ui'
 
 const WorkoutSlider = ({sliderHeader,...otherProps}) => {
@@ -8,13 +9,14 @@ const WorkoutSlider = ({sliderHeader,...otherProps}) => {
             <div className="Slider">
                 <h2>{sliderHeader}</h2>
                 <div className="Slider-arrows">
-                    <div className="Slider-arrows--container">
+                    <Button>
                         <ArrowLeft size="2rem" col={"var(--secondaryBase)"}/>
-                    </div>
-                    <div className="Slider-arrows--container">
+                    </Button>
+                    <Button>
                         <ArrwoRight size="2rem" col={"var(--secondaryBase)"}/>
-                    </div>
+                    </Button>
                 </div>
+                <h3>See all</h3>
             </div>
         </GridSlider>
     )
@@ -27,9 +29,10 @@ grid-column : ${props => props.column || '1/-1'};
 grid-row : ${props => props.row || '1/-1'};
 .Slider{
     display:grid;
-    grid-template-columns: minmax(min-content,23rem) max-content;
+    grid-template-columns: minmax(min-content,23rem) max-content 1fr;
+    align-items: center;
     h2{
-    font-size: var(--subhead);
+    font-size: var(--miniHead);
     margin : 0;
     font-weight: 500;
     color: var(--base);
@@ -43,19 +46,15 @@ grid-row : ${props => props.row || '1/-1'};
             margin-right: 10px;
         }
     }
+    h3{
+        font-size: var(--miniHead);
+        margin : 0;
+        font-weight: 500;
+        color: var(--base);
+        justify-self: end;
+    }
     &-arrows{
         display: flex;
-        &--container{
-            width: 2rem;
-            height: 2rem;
-            display: flex;
-            justify-content: center;
-            padding: 0.5rem;
-            cursor: pointer;
-            &:hover{
-                background-color : var(--imgGd);
-            }
-        }
     }
 }
 `
