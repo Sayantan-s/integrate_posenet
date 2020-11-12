@@ -39,6 +39,33 @@ className="feather feather-chevrons-down">
 <polyline points="7 6 12 11 17 6"></polyline></svg>
 
 
+export const ArrowLeft = ({size,col}) => <svg 
+xmlns="http://www.w3.org/2000/svg" 
+width={size} 
+height={size} 
+viewBox="0 0 24 24" 
+fill="none" 
+stroke={col} 
+strokeWidth="2.8" 
+strokeLinecap="round" 
+strokeLinejoin="round" 
+className="feather feather-chevron-left">
+<polyline points="15 18 9 12 15 6"></polyline></svg>
+
+export const ArrwoRight = ({size,col}) => <svg 
+xmlns="http://www.w3.org/2000/svg" 
+width={size} 
+height={size} 
+viewBox="0 0 24 24" 
+fill="none" 
+stroke={col} 
+strokeWidth="2.8" 
+strokeLinecap="round" 
+strokeLinejoin="round" 
+className="feather feather-chevron-right">
+<polyline points="9 18 15 12 9 6"></polyline></svg>
+
+
 export const Facebook = _ => 
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
 <path d="M23.446 18l0.889-5.791h-5.557v-3.758c0-1.584 0.776-3.129 3.265-3.129h2.526v-4.93c0 0-2.292-0.391-4.484-0.391-4.576 0-7.567 2.774-7.567 7.795v4.414h-5.087v5.791h5.087v14h6.26v-14z"/>

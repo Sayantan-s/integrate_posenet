@@ -35,6 +35,7 @@ export default Footer
 const LogoHolder = styled.div`
     grid-column :2/4;
     grid-row : 1/-1;
+    justify-self: start;
     .Logo-container{
         display: flex;
         flex-direction: column;
@@ -59,6 +60,7 @@ const SocioHolder = styled.div`
     grid-template-columns : repeat(2,max-content);
     justify-content:space-between;
     align-items:center;
+    justify-self: end;
     h1{
         font-size : var(--subhead);
         color : var(--secondaryBase);

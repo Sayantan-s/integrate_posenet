@@ -9,7 +9,7 @@ import { Grid } from './components/layout/StyleWrappers'
 const Landing = () => {
     const Mains = {
         header:"Experience now" ,
-        shorthead:"Get your body moving and be ready to unleash the dancer within you by taking this challenge and climbing to the top of the leaderboard"
+        shorthead:"Get your body moving and be ready to unleash the dancer within you!"
     }
     const Endings = {
         header : 'Enjoy fitness',
@@ -20,14 +20,14 @@ const Landing = () => {
             <LandingTop />
             <Section 
             rows="2/3"
-            gap="3rem 1rem" 
+            gap="2rem" 
             headerProps={Mains}
             children={<WorkoutsSection />}
             />
             <Section 
             rows="3/4"
             headerProps={Endings}
-            gap="3rem 1rem"
+            gap="2rem 1rem"
             children={<EndingSection />}
             />
             <Section

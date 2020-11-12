@@ -5,13 +5,13 @@ const WorkoutsSection = () => {
     return (
         <>
            <WorkoutSlider 
-           column="2/-1"
+           column="2/-2"
            row="2/3"
            sliderHeader="Spanish workouts"
            />
 
            <WorkoutSlider 
-           column="2/-1"
+           column="2/-2"
            row="3/4"
            sliderHeader="Latin workouts"
            /> 

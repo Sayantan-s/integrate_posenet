@@ -115,7 +115,7 @@ const LandingWrapperTop = styled(Grid)`
                                 content : '';
                                 width: 15%;
                                 height: 3px;
-                                background-color: black;
+                                background-color: var(--base);
                                 margin-bottom: 1rem;
                             }
                         }
