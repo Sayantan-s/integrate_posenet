@@ -5,11 +5,10 @@ import { Grid } from '../layout/StyleWrappers'
 import Image from '../ui/Image.component'
 import Sectionheader from '../ui/Sectionheader.component'
 
-const Section = ({children,headerProps,row,gap,...props}) => {
+const Section = ({children,headerProps,row,...props}) => {
     return (
        <SecWrapper 
        {...props}
-       gap={gap}
        row={row || "max-content"}
        col2>
            { headerProps && <Sectionheader
@@ -30,6 +29,7 @@ grid-column: 1/-1;
 background-color : ${props => props.bgCol || 'var(--primaryBase)' };
 align-items : ${props => props.align || 'none'};
 justify-items : ${props => props.justify || 'none'};
+padding : ${props => props.p || '0rem'};
 `
 
 

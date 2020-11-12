@@ -63,7 +63,7 @@ h2{
 }
 p{
     max-width : 720px;
-    min-width : 300px;
+    min-width : 400px;
     margin-bottom: 1.5rem;
 }
 `
@@ -72,15 +72,24 @@ display : flex;
 place-content:center;
 grid-row : 2/-1;
 grid-column :8/-2;
-padding : 2rem 0;
 .video-wrapper {
     position : relative;
+    overflow: hidden;
     video{
         max-width : 700px;
+        transform : scale(1.03)
     }
     &::after{
         content : '';
         position : absolute;
+        background: black;
+        z-index: 1000;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--imgGd);
+                          
     }
 }
 `

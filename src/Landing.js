@@ -4,6 +4,7 @@ import EndingSection from './components/Landing/EndingSection.component'
 import Footer from './components/Landing/Footer.component'
 import LandingTop from './components/Landing/LandingTop.component'
 import Section from './components/Landing/Section.component'
+import WorkoutsSection from './components/Landing/WorkoutsSection.component'
 import { Grid } from './components/layout/StyleWrappers'
 const Landing = () => {
     const Mains = {
@@ -12,24 +13,28 @@ const Landing = () => {
     }
     const Endings = {
         header : 'Enjoy fitness',
-        shorthead : 'Pick a spacious location and start the challenge,when it goes live through your phone or laptop.'
+        shorthead : 'Pick a spacious location and start the challenge.'
     }
     return (
-        <Grid gap="3rem 0">
+        <Grid gap="2rem 0">
             <LandingTop />
             <Section 
-            rows="2/3" 
-            headerProps={Mains}/>
+            rows="2/3"
+            gap="3rem 1rem" 
+            headerProps={Mains}
+            children={<WorkoutsSection />}
+            />
             <Section 
             rows="3/4"
             headerProps={Endings}
+            gap="3rem 1rem"
             children={<EndingSection />}
             />
             <Section
             bgCol="var(--primaryMain)" 
-            row="20vh"
+            rows="4/-1"
+            p="2rem 0"
             align="center"
-            //justify="center"
             flexBasis="none"
             children={<Footer />}
             />
