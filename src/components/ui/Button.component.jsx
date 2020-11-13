@@ -5,6 +5,7 @@ const Button = ({children,btnCol,btnBg,p,...otherProps}) => {
     return <Btn
     btnCol={btnCol}
     btnBg={btnBg}
+    p={p}
     {...otherProps}
     >{children}</Btn>
 }

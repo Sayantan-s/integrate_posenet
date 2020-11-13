@@ -11,17 +11,26 @@ const WorkoutSlider = ({sliderHeader,...otherProps}) => {
                 <h2>{sliderHeader}</h2>
                 <div className="Slider-arrows">
                     <Button
+                    width={'2rem'}
+                    height="2rem"
                     p="0rem">
                         <ArrowLeft size="2rem" col={"var(--secondaryBase)"}/>
                     </Button>
                     <Button
-                    p="0rem">
+                    p="0rem"
+                    width={'2rem'}
+                    height="2rem">
                         <ArrwoRight size="2rem" col={"var(--secondaryBase)"}/>
                     </Button>
                 </div>
                 <h3>See all</h3>
             </div>
-            <Moveable />
+           <div className="Track">
+                <Moveable />
+                <Moveable />
+                <Moveable />
+                <Moveable />
+           </div>
         </GridSlider>
     )
 }
@@ -32,7 +41,7 @@ export default WorkoutSlider
 
 const Moveable = () => {
     return(
-        <MoveableSlider>
+        <MoveableSlider className="Moveable">
             <Image 
             mainClass="Moveable-"
             src={"https://i.ytimg.com/vi/8DZktowZo_k/maxresdefault.jpg"}
@@ -70,9 +79,11 @@ cursor: pointer;
 const GridSlider = styled.div`
 grid-column : ${props => props.column || '1/-1'};
 grid-row : ${props => props.row || '1/-1'};
-.Moveable{
+.Track{
     display:flex;
     overflow: auto;
+    gap : 2rem;
+    
 }
 .Slider{
     display:grid;
