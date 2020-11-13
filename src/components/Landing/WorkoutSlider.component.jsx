@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-import Button from '../ui/Button.component'
+/*import Button from '../ui/Button.component'
 import { ArrowLeft, ArrwoRight } from '../ui/ui'
-import Image from '../ui/Image.component'
+import Image from '../ui/Image.component'*/ 
 
-const WorkoutSlider = ({sliderHeader,...otherProps}) => {
+const WorkoutSlider = ({sliderHeader,children,...otherProps}) => {
     return (
         <GridSlider {...otherProps}>
             <div className="Slider">
                 <h2>{sliderHeader}</h2>
                 <div className="Slider-arrows">
-                    <Button
+                    {/*<Button
                     width={'2rem'}
                     height="2rem"
                     p="0rem">
@@ -21,15 +21,12 @@ const WorkoutSlider = ({sliderHeader,...otherProps}) => {
                     width={'2rem'}
                     height="2rem">
                         <ArrwoRight size="2rem" col={"var(--secondaryBase)"}/>
-                    </Button>
+                    </Button>*/}
                 </div>
                 <h3>See all</h3>
             </div>
            <div className="Track">
-                <Moveable />
-                <Moveable />
-                <Moveable />
-                <Moveable />
+               {children}
            </div>
         </GridSlider>
     )
@@ -37,53 +34,15 @@ const WorkoutSlider = ({sliderHeader,...otherProps}) => {
 
 export default WorkoutSlider
 
-
-
-const Moveable = () => {
-    return(
-        <MoveableSlider className="Moveable">
-            <Image 
-            mainClass="Moveable-"
-            src={"https://i.ytimg.com/vi/8DZktowZo_k/maxresdefault.jpg"}
-            alt="fitness-img"/>
-        </MoveableSlider>
-    )
-}
-
-const MoveableSlider = styled.div`
-cursor: pointer;
-.Moveable-img--container{
-    height: 300px;
-    max-width: 400px;
-    position: relative;
-    overflow: hidden;
-    img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position : 0% 50%;
-    }
-    &::after{
-        content: '';
-        position: absolute;
-        background-color: var(--imgGd);
-        z-index: 1000;
-        top : 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
-`
-
 const GridSlider = styled.div`
 grid-column : ${props => props.column || '1/-1'};
 grid-row : ${props => props.row || '1/-1'};
+display:flex;
+flex-direction: column;
+gap : 2rem;
 .Track{
     display:flex;
-    overflow: auto;
     gap : 2rem;
-    
 }
 .Slider{
     display:grid;

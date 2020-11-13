@@ -16,7 +16,7 @@ const Landing = () => {
         shorthead : 'Pick a spacious location and start the challenge.'
     }
     return (
-        <Grid gap="2rem 0">
+        <Grid gap="3rem 0">
             <LandingTop />
             <Section 
             rows="2/3"
@@ -27,7 +27,7 @@ const Landing = () => {
             <Section 
             rows="3/4"
             headerProps={Endings}
-            gap="2rem 1rem"
+            gap="3rem 1rem"
             children={<EndingSection />}
             />
             <Section
