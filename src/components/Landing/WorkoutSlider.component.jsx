@@ -21,6 +21,7 @@ const WorkoutSlider = ({sliderHeader,...otherProps}) => {
                 </div>
                 <h3>See all</h3>
             </div>
+            <Moveable />
         </GridSlider>
     )
 }
@@ -41,15 +42,27 @@ const Moveable = () => {
 }
 
 const MoveableSlider = styled.div`
+cursor: pointer;
 .Moveable-img--container{
     height: 300px;
     max-width: 400px;
     position: relative;
+    overflow: hidden;
     img{
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position : 0% 50%;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        background-color: var(--imgGd);
+        z-index: 1000;
+        top : 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 }
 `
@@ -58,9 +71,7 @@ const GridSlider = styled.div`
 grid-column : ${props => props.column || '1/-1'};
 grid-row : ${props => props.row || '1/-1'};
 .Moveable{
-    display: grid;
-    grid-template-rows: max-content;
-    grid-template-columns: 1fr 1fr;
+    display:flex;
     overflow: auto;
 }
 .Slider{
