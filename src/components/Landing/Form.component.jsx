@@ -15,18 +15,20 @@ const Form = () => {
     const { fname,lname,email,password,confpass,phone } = form
     return ReactDOM.createPortal(
         <JoinForm>
-            <Input 
-            type="text"
-            placeholder="First name"
-            value={fname}
-            onChange={(eve) =>{setForm(eve.target.value)} } 
-            />
-             <Input 
-            type="text"
-            placeholder="Last name"
-            value={lname}
-            onChange={(eve) =>{setForm(eve.target.value)} } 
-            />
+            <div className="name-flex">
+                <Input 
+                type="text"
+                placeholder="First name"
+                value={fname}
+                onChange={(eve) =>{setForm(eve.target.value)} } 
+                />
+                <Input 
+                type="text"
+                placeholder="Last name"
+                value={lname}
+                onChange={(eve) =>{setForm(eve.target.value)} } 
+                />
+            </div>
              <Input 
             type="text"
             placeholder="rahulved@email.com"
@@ -46,9 +48,9 @@ const Form = () => {
             onChange={(eve) =>{setForm(eve.target.value)}}
             />
             <Input 
-            type="number"
+            type="text"
             placeholder="Phone No."
-            value={confpass}
+            value={phone}
             onChange={(eve) =>{setForm(eve.target.value)}}
             />
             <Input inpType="dropdown" />
@@ -72,4 +74,13 @@ gap : 0.5rem;
 width: 400px;
 padding : 2rem;
 background-color : var(--primaryBase); 
+.name-flex{
+    display: flex;
+    gap: 0.5rem;
+    input{
+        &:first-child,&:last-child{
+            flex-basis: 50%;
+        }
+    }
+}
 `

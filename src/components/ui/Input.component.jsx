@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Button from './Button.component'
+import { ArrowDropDown } from './ui'
 
 const Input = ({inpType,config,...props}) => {
     const types = [
@@ -11,9 +12,21 @@ const Input = ({inpType,config,...props}) => {
     let inpEle = null;
     switch(inpType){
         case 'dropdown' :
-            inpEle =(<><button {...props}>Heelo</button>
-            <WorkoutTypes>{types.map(type =><a href="#" key={type}>{type}</a> )}</WorkoutTypes>
-            </>)
+            inpEle =(
+            <Dropdown className={'Dropdown'}>
+                <Button 
+                {...props} 
+                className="Dropdown-btn"
+                btnCol="var(--primaryBase)" 
+                btnBg={'var(--secondaryMain)'} 
+                fontSize="var(--content)" 
+                p="0.5rem">
+                    <span>Choose dance</span>
+                    <span><ArrowDropDown size={'1.5rem'}/></span>
+                </Button>
+                <div className="Dropdown-types">{types.map(type =><a href="#" key={type}>{type}</a> )}</div>
+            </Dropdown>
+            )
             break;
         case 'submitBtn' : 
             inpEle = <Button 
@@ -32,18 +45,35 @@ const Input = ({inpType,config,...props}) => {
 
 export default Input
 
-const WorkoutTypes = styled.div`
-display: flex;
-flex-direction: column;
-font-weight: 500;
-background-color : var(--primaryBase);
-transition : 0.3s all;
-a{
-    text-decoration: none;
-    color : var(--base);
-    padding: 0.5rem;
-    &:hover{
-        background-color : var(--primaryMain)
+const Dropdown = styled.div`
+.Dropdown{
+    position: relative;
+    &-types{
+        flex-direction: column;
+        font-weight: 500;
+        background-color : var(--primaryBase);
+        transition : 0.3s all;
+        display: flex;
+        a{
+            text-decoration: none;
+            color : var(--base);
+            padding: 0.5rem;
+            &:hover{
+                background-color : var(--primaryMain)
+            }
+        }
+    }
+    &-btn{
+        gap : 3rem;
+        span{
+            &:last-child{
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+        &:hover &-types{
+           
+        }
     }
 }
 `
@@ -55,8 +85,7 @@ background-color : var(--primaryBase);
 font-family : var(--font);
 font-size : var(--content);
 transition : 0.3s all;
-box-shadow : 3px 3px 0px var(--imgGd);
-border-bottom : 3px solid transparent;
+border-bottom : 3px solid var(--imgGd);
 &[type="password"]{
     letter-spacing : 5px;
 }

@@ -17,6 +17,7 @@ const Btn = styled.button`
 display:flex;
 align-self :${props => props.start ? 'flex-start' : props.end ? 'flex-end' : 'none'};
 justify-content:center;
+align-items :center;
 padding : ${props => props.p ? props.p : '0.8rem 1.5rem'};
 width: ${props => props.width || 'auto'};
 height: ${props => props.height || 'auto'};
@@ -26,7 +27,7 @@ outline  : none;
 background-color : ${props => props.btnBg || 'transparent'};
 font-family: 'Futura TS';
 color : ${props => props.btnCol || 'var(--primaryBase)'};
-font-size : var(--button);
+font-size : ${props => props.fontSize || 'var(--button)'};
 cursor : pointer;
 font-weight: 500;
 margin : 0.5rem 0 0 0;

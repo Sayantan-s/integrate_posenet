@@ -5,8 +5,8 @@ export const SpainsWorkouts = [
         time : '5:02'
     },
     {
-        src : 'fz0AossTXaM',
-        caption : '30 min cardio',
+        src : 'SJ6f2TnHZBc',
+        caption : '25-minute Hip-Hop',
         time : '7:22'
     },
     {
@@ -15,8 +15,8 @@ export const SpainsWorkouts = [
         time : '3:12'
     },
     {
-        src : '7OO3rbH_VoM',
-        caption : 'Señorita | Dance Workout',
+        src : '6oLg5fFe5ww',
+        caption : 'Kickboxing | Dance Workout',
         time : '10:33'
     }
 ]
@@ -28,8 +28,8 @@ export const LatinWorkouts = [
          time : '9:14'
     },
     {
-        src : 'xfDVrv54Lfc',
-        caption : '15 min latin dance workout',
+        src : '8CkUrkDP-v0',
+        caption : '40-Minute Boxing Workout',
          time : '5:03'
     },
     {
