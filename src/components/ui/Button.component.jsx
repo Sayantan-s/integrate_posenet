@@ -15,6 +15,7 @@ export default Button
 
 const Btn = styled.button`
 display:flex;
+align-self :${props => props.start ? 'flex-start' : props.end ? 'flex-end' : 'none'};
 justify-content:center;
 padding : ${props => props.p ? props.p : '0.8rem 1.5rem'};
 width: ${props => props.width || 'auto'};
