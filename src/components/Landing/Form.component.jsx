@@ -2,59 +2,92 @@ import React from 'react'
 import Input from '../ui/Input.component'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
+import Button from '../ui/Button.component'
 
 const Form = () => {
     const [form,setForm] = React.useState({
-        fname : '',
-        lname : '',
-        email : '',
-        password : '',
-        confpass : '',
-        phone : ''
-    });
-    const { fname,lname,email,password,confpass,phone } = form
+        fname : {
+            ElementConfig : {
+                type : 'text',
+                placeholder  : 'Rahul',
+            },
+            value : ''
+        },
+        lname : {
+            ElementConfig : {
+                type : 'text',
+                placeholder  : 'Ved',
+            },
+            value : ''
+        },
+        email : {
+            ElementConfig : {
+                type : 'email',
+                placeholder  : 'rahulved@email.com',
+            },
+            value : ''
+        },
+        password : {
+            ElementConfig : {
+                type : 'password',
+                placeholder  : 'Password',
+            },
+            value : ''
+        },
+        confPass : {
+            ElementConfig : {
+                type : 'password',
+                placeholder  : 'Confirm password',
+            },
+            value : ''
+        },
+        phone : {
+            ElementConfig : {
+                type : 'number',
+                placeholder  : 'Phone No.',
+            },
+            value : ''
+        }
+    })
+    let FormInput = [];
+    for(let i in form){
+        FormInput.push({
+            key : i,
+            Data : form[i]
+        })
+    }
+    const InputChangeHandler = (eve,id) => {
+        const updateForm = { ...form };
+        const updateFormEle = { ...updateForm[id] }
+        updateFormEle.value = eve.target.value;
+        updateForm[id] = updateFormEle;
+        setForm(updateForm);
+    }
+    const submitHandler = eve => {
+        eve.preventDefault();
+        console.log("=========== USER DATA ===========")
+        for(let i in form){
+            console.log(form[i].value)
+        }
+        console.log("=========== USER DATA ===========")
+    }
     return ReactDOM.createPortal(
-        <JoinForm>
-            <div className="name-flex">
-                <Input 
-                type="text"
-                placeholder="First name"
-                value={fname}
-                onChange={(eve) =>{setForm(eve.target.value)} } 
-                />
-                <Input 
-                type="text"
-                placeholder="Last name"
-                value={lname}
-                onChange={(eve) =>{setForm(eve.target.value)} } 
-                />
-            </div>
-             <Input 
-            type="text"
-            placeholder="rahulved@email.com"
-            value={email}
-            onChange={(eve) =>{setForm(eve.target.value)} } 
+        <JoinForm onSubmit={submitHandler}>
+            {
+                FormInput.map(({key,Data}) => {
+                    return <Input
+                    key={key}
+                    onChange={(eve) => { InputChangeHandler(eve,key) }} 
+                    {...Data}
+                    />
+                })
+            }
+            <Button 
+            end={"true"}
+            btnBg="var(--secondaryMain)" 
+            type="submit"
+            children="Register"
             />
-            <Input 
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(eve) =>{setForm(eve.target.value)}}
-            />
-            <Input 
-            type="password"
-            placeholder="Confirm password"
-            value={password}
-            onChange={(eve) =>{setForm(eve.target.value)}}
-            />
-            <Input 
-            type="text"
-            placeholder="Phone No."
-            value={phone}
-            onChange={(eve) =>{setForm(eve.target.value)}}
-            />
-            <Input inpType="dropdown" />
-            <Input inpType="submitBtn"/>
         </JoinForm>,
         document.getElementById('modals')
     )
@@ -74,13 +107,4 @@ gap : 0.5rem;
 width: 400px;
 padding : 2rem;
 background-color : var(--primaryBase); 
-.name-flex{
-    display: flex;
-    gap: 0.5rem;
-    input{
-        &:first-child,&:last-child{
-            flex-basis: 50%;
-        }
-    }
-}
 `

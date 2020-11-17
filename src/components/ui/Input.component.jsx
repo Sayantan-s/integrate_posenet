@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import Button from './Button.component'
-import { ArrowDropDown } from './ui'
+//import { ArrowDropDown } from './ui'
 
-const Input = ({inpType,config,...props}) => {
+const Input = ({inpType,config,ElementConfig,onChange,...props}) => {
     const types = [
         'Dance workouts',
         'Weight training',
@@ -11,7 +11,7 @@ const Input = ({inpType,config,...props}) => {
     ]
     let inpEle = null;
     switch(inpType){
-        case 'dropdown' :
+        /*case 'dropdown' :
             inpEle =(
             <Dropdown className={'Dropdown'}>
                 <Button 
@@ -27,18 +27,20 @@ const Input = ({inpType,config,...props}) => {
                 <div className="Dropdown-types">{types.map(type =><a href="#" key={type}>{type}</a> )}</div>
             </Dropdown>
             )
-            break;
-        case 'submitBtn' : 
-            inpEle = <Button 
-            end
-            btnBg="var(--secondaryMain)" 
-            type="submit">Submit</Button> ;
-            break;
+            break;*/
         case 'textarea' : 
-            inpEle = <textarea {...props} />
+            inpEle = <textarea 
+            {...ElementConfig}  
+            {...props}
+            onChange={onChange}
+            />
             break;
         default :
-            inpEle = <TextField {...props} />
+            inpEle = <TextField 
+            {...ElementConfig} 
+            {...props}
+            onChange={onChange}
+            />
     }
     return  <>{inpEle}</>
 }
@@ -46,14 +48,13 @@ const Input = ({inpType,config,...props}) => {
 export default Input
 
 const Dropdown = styled.div`
-.Dropdown{
-    position: relative;
-    &-types{
+    .Dropdown-types{
         flex-direction: column;
         font-weight: 500;
         background-color : var(--primaryBase);
         transition : 0.3s all;
         display: flex;
+        justify-items :start;
         a{
             text-decoration: none;
             color : var(--base);
@@ -63,7 +64,7 @@ const Dropdown = styled.div`
             }
         }
     }
-    &-btn{
+    .Dropdown-btn{
         gap : 3rem;
         span{
             &:last-child{
@@ -71,11 +72,7 @@ const Dropdown = styled.div`
                 height: 1.5rem;
             }
         }
-        &:hover &-types{
-           
-        }
     }
-}
 `
 const TextField = styled.input`
 padding: 1rem 0.5rem;
@@ -88,6 +85,9 @@ transition : 0.3s all;
 border-bottom : 3px solid var(--imgGd);
 &[type="password"]{
     letter-spacing : 5px;
+}
+&[type="number"]{
+    -moz-appearance: textfield;
 }
 ::placeholder{
     letter-spacing : normal;
