@@ -11,42 +11,67 @@ const Form = () => {
                 type : 'text',
                 placeholder  : 'Rahul',
             },
-            value : ''
+            value : '',
+            validity : {
+                filled : false,
+            }
         },
         lname : {
             ElementConfig : {
                 type : 'text',
                 placeholder  : 'Ved',
             },
-            value : ''
+            value : '',
+            validity : {
+                filled : false,
+            }
         },
         email : {
             ElementConfig : {
                 type : 'email',
                 placeholder  : 'rahulved@email.com',
             },
-            value : ''
+            value : '',
+            validity : {
+                filled : false,
+                shouldHave : '@'
+            }
         },
         password : {
             ElementConfig : {
                 type : 'password',
                 placeholder  : 'Password',
             },
-            value : ''
+            value : '',
+            validity : {
+                filled : false,
+                minLength : 6,
+                maxLength : 12
+            }
         },
         confPass : {
             ElementConfig : {
                 type : 'password',
                 placeholder  : 'Confirm password',
             },
-            value : ''
+            value : '',
+            validity : {
+                filled : false,
+                minLength : 6,
+                maxLength : 8
+            }
         },
         phone : {
             ElementConfig : {
                 type : 'number',
                 placeholder  : 'Phone No.',
             },
-            value : ''
+            value : '',
+            validity : {
+                filled : false,
+                minLength : 8,
+                maxLength : 15
+            }
         }
     })
     let FormInput = [];
