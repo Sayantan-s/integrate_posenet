@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled,{ css } from 'styled-components'
 import React from 'react'
 
 const Image = ({src,alt,mainClass,adderClass,...moreProps}) => {
@@ -15,6 +15,11 @@ const Image = ({src,alt,mainClass,adderClass,...moreProps}) => {
 export default Image
 
 const MediaImage = styled.div`
+position: relative;
+overflow: hidden;
+height: max-content;
+${props => props.hover && css`
+    &:hover 
 
-
+`}
 `

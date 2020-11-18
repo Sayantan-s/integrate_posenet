@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+//import styled from 'styled-components'
 import EndingSection from './components/Landing/EndingSection.component'
 import Footer from './components/Landing/Footer.component'
 import Form from './components/Landing/Form.component'
@@ -10,7 +10,8 @@ import { Grid } from './components/layout/StyleWrappers'
 import Backdrop from './components/ui/Backdrop.component'
 import { openForm } from './store/actions/formact.actions'
 import { connect } from 'react-redux'
-const Landing = () => {
+const Landing = (props) => {
+    const { formVisibility,backdropVisibility } = props 
     const LayoutProps = [
         {
             row : 'max-content 1fr max-content',
@@ -52,23 +53,23 @@ const Landing = () => {
         <>
             <Grid gap="3rem 0">
                 {
-                    LayoutProps.map((section,id) => {
-                        return <Section
-                        key={id}
-                        {...section}
-                        />
-                    })
+                    LayoutProps.map((section,id) => <Section key={id} {...section} />)
                 }
             </Grid>
-            {/*<Backdrop />
-            <Form /> */}
+            {  formVisibility && backdropVisibility &&
+                <>
+                    <Backdrop />
+                    <Form />
+                </>
+            }
         </>
     )
 }
 
 const mapStateToProps = state => {
     return { 
-        formVisibility : state
+        backdropVisibility : state.backdrop,
+        formVisibility : state.formModal
     }
 }
 
