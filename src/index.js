@@ -6,12 +6,15 @@ import reportWebVitals from './reportWebVitals';
 //import Character from './Character';
 import Landing from './Landing';
 import './assets/fonts/stylesheet.css' 
-import * as BrowserRouter from 'react-router-dom'
+import { Provider } from  'react-redux'
+import store from './store/store';
 
 ReactDOM.render(
-  <React.StrictMode>
+ <Provider store={store}>
+    <React.StrictMode>
       <Landing />
-  </React.StrictMode>,
+    </React.StrictMode>
+ </Provider>,
   document.getElementById('root')
 );
 

@@ -5,18 +5,17 @@ import { Grid } from '../layout/StyleWrappers'
 import Image from '../ui/Image.component'
 import Sectionheader from '../ui/Sectionheader.component'
 
-const Section = ({children,headerProps,row,...props}) => {
+const Section = ({Children,headerProps,row,...props}) => {
     return (
        <SecWrapper 
        {...props}
-       row={row || "max-content"}
-       col2>
+       row={row || "max-content"}>
            { headerProps && <Sectionheader
            colCount="6/10"
            rowCount="1/2"
            {...headerProps}
            /> }
-           {children}
+           <Children />
        </SecWrapper>
     )
 }

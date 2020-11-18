@@ -1,3 +1,4 @@
+import styled from 'styled-components'
 import React from 'react'
 
 const Image = ({src,alt,mainClass,adderClass,...moreProps}) => {
@@ -12,3 +13,8 @@ const Image = ({src,alt,mainClass,adderClass,...moreProps}) => {
 }
 
 export default Image
+
+const MediaImage = styled.div`
+
+
+`
