@@ -1,8 +1,8 @@
 import React from 'react'
-import { SocialLinks } from '../commons/Links'
-import Nav from '../ui/Nav.component'
-import { Logo } from '../ui/ui'
-import SocialLink  from '../ui/SocialLinks.components'
+import { SocialLinks } from '../../commons/Links'
+import Nav from '../../ui/Nav.component'
+import { Logo } from '../../ui/ui'
+import SocialLink  from '../../ui/SocialLinks.components'
 import styled from 'styled-components'
 //import { Grid } from '../layout/StyleWrappers'
 

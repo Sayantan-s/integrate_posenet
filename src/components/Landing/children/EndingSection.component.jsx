@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Button from '../ui/Button.component'
-import video from "../../assets/thirdVideo.mp4";
+import Button from '../../ui/Button.component'
+import video from "../../../assets/thirdVideo.mp4";
 
 const EndingSection = () => {
     return (

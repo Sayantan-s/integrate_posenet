@@ -1,12 +1,12 @@
 import { CLOSE_FORM, OPEN_FORM } from "../types"
 
-export const openForm = _ => {
+export const FORM_IS_OPEN = _ => {
     return { 
         type : OPEN_FORM
     }
 }
 
-export const closeForm = _ => {
+export const FORM_IS_CLOSED = _ => {
     return{ 
         type : CLOSE_FORM
     }

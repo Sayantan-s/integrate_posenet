@@ -1,7 +1,7 @@
 import React from 'react'
-import { PlayButton } from '../ui/ui'
+import { PlayButton } from '../../ui/ui'
 import styled, { css } from 'styled-components'
-import Image from '../ui/Image.component'
+import Image from '../../ui/Image.component'
 const Thumbnails = ({src,caption,type,time}) => {
     return(
         <MoveableSlider className="Moveable">

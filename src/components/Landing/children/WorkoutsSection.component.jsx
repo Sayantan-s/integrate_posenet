@@ -1,7 +1,7 @@
 import React from 'react'
-import { LatinWorkouts, SpainsWorkouts } from '../commons/Workouts'
-import Thumbnails from './Thumbnails.components'
-import WorkoutSlider from './WorkoutSlider.component'
+import { LatinWorkouts, SpainsWorkouts } from '../../commons/Workouts'
+import Thumbnails from '../dynamic/Thumbnails.components'
+import WorkoutSlider from '../dynamic/WorkoutSlider.component'
 
 const WorkoutsSection = () => {
     return (

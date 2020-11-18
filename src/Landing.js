@@ -1,14 +1,13 @@
 import React from 'react'
 //import styled from 'styled-components'
-import EndingSection from './components/Landing/EndingSection.component'
-import Footer from './components/Landing/Footer.component'
+import EndingSection from './components/Landing/children/EndingSection.component'
+import Footer from './components/Landing/children/Footer.component'
 import Form from './components/Landing/Form.component'
-import LandingTop from './components/Landing/LandingTop.component'
-import Section from './components/Landing/Section.component'
-import WorkoutsSection from './components/Landing/WorkoutsSection.component'
+import LandingTop from './components/Landing/children/LandingTop.component'
+import Section from './components/Landing/dynamic/Section.component'
+import WorkoutsSection from './components/Landing/children/WorkoutsSection.component'
 import { Grid } from './components/layout/StyleWrappers'
 import Backdrop from './components/ui/Backdrop.component'
-import { openForm } from './store/actions/formact.actions'
 import { connect } from 'react-redux'
 const Landing = (props) => {
     const { formVisibility,backdropVisibility } = props 
@@ -73,13 +72,7 @@ const mapStateToProps = state => {
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        formOn : _ => dispatch(openForm())
-    }
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(Landing)
+export default connect(mapStateToProps)(Landing)
 
 
 

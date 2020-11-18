@@ -1,11 +1,12 @@
 import React from 'react'
-import { Grid } from '../layout/StyleWrappers'
 import styled from 'styled-components'
-import Button from '../ui/Button.component'
-import Nav from '../ui/Nav.component'
-import Image from '../ui/Image.component'
-import { ChevronDown, ChevronRight } from '../ui/ui'
-const LandingTop = () => {
+import Button from '../../ui/Button.component'
+import Nav from '../../ui/Nav.component'
+import Image from '../../ui/Image.component'
+import { ChevronDown, ChevronRight } from '../../ui/ui'
+import { connect } from 'react-redux'
+import { FORM_IS_OPEN } from '../../../store/actions/formact.actions'
+const LandingTop = (props) => {
     return (
       <>
             <Nav 
@@ -19,6 +20,7 @@ const LandingTop = () => {
                         <h2>Work out at home <br />for free.</h2>
                         <p>We believe fitness should be accessible to everyone, everywhere, regardless of income or access to a gym. With hundreds of professional workouts, healthy recipes and informative articles, as well as one of the most positive communities on the web, you’ll have everything you need to reach your personal fitness goals – for free! </p>
                         <Button 
+                        onClick={props.openForm}
                         className="btn"
                         btnBg={'var(--secondaryBase)'}>
                             <span>Count me in</span>
@@ -37,7 +39,13 @@ const LandingTop = () => {
     )
 }
 
-export default LandingTop
+const mapDispatchToProps = dispatch => {
+    return {
+        openForm : _ => dispatch(FORM_IS_OPEN())
+    }
+}
+
+export default connect(null,mapDispatchToProps)(LandingTop)
 
 const LandingBg = styled.div`
       display :flex;

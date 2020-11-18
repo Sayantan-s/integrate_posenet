@@ -1,9 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import DanceTypes from '../commons/DanceTypes'
-import { Grid } from '../layout/StyleWrappers'
-import Image from '../ui/Image.component'
-import Sectionheader from '../ui/Sectionheader.component'
+import { Grid } from '../../layout/StyleWrappers'
+import Sectionheader from '../../ui/Sectionheader.component'
 
 const Section = ({Children,headerProps,row,...props}) => {
     return (
