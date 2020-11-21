@@ -10,6 +10,9 @@ import { Grid } from './components/layout/StyleWrappers'
 import Backdrop from './components/ui/Backdrop.component'
 import { connect } from 'react-redux'
 const Landing = (props) => {
+    React.useEffect(() => {
+        console.log(window.scrollY)
+    },[])
     const { formVisibility,backdropVisibility } = props 
     const LayoutProps = [
         {
